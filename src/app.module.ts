@@ -9,6 +9,7 @@ import { join } from 'path';
 import { VideosModule } from './videos/videos.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { ChatbotModule } from './chatbot/chatbot.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { UsersModule } from './users/users.module';
     VideosModule,
     AuthModule,
     UsersModule,
+    ChatbotModule,
   ],
   controllers: [],
   providers: [],

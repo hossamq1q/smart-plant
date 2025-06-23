@@ -3,6 +3,7 @@ export enum Routes {
   PESTS = 'pests',
   VIDEOS = 'videos',
   AUTH = 'auth',
+  CHATBOT = 'chatbot',
 }
 
 export enum Services {
@@ -11,4 +12,5 @@ export enum Services {
   VIDEOS = 'VIDEOS_SERVICE',
   AUTH = 'AUTH_SERVICE',
   USERS = 'USERS_SERVICE',
+  CHATBOT = 'CHATBOT_SERVICE',
 }

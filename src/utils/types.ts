@@ -21,3 +21,12 @@ export type signUpPayload = {
   firstName: string;
   lastName: string;
 };
+
+export type chatbotResponse = {
+  answer: string;
+};
+
+export type chatbotParams = Partial<{
+  image: Express.Multer.File;
+  question: string;
+}>;

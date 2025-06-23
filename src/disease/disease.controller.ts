@@ -1,13 +1,14 @@
 import {
-  Controller,
+  Controller, HttpException,
   Inject,
   Post,
   UploadedFile,
-  UseInterceptors,
-} from '@nestjs/common';
+  UseInterceptors
+} from "@nestjs/common";
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Routes, Services } from "../utils/constans";
 import { IDiseaseService } from "./disease";
+import { HttpStatusCode } from "axios";
 
 @Controller(Routes.DISEASE)
 export class DiseaseController {
@@ -18,6 +19,11 @@ export class DiseaseController {
   @Post()
   @UseInterceptors(FileInterceptor('image'))
   async getDisease(@UploadedFile() image: Express.Multer.File) {
-    return this.diseaseService.getDisease(image);
+    try {
+      return this.diseaseService.getDisease(image);
+    } catch (error) {
+      console.log(error)
+      throw new HttpException(`${error}`, HttpStatusCode.ExpectationFailed)
+    }
   }
 }
